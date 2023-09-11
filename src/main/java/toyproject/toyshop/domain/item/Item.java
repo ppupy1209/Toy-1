@@ -16,7 +16,8 @@ import java.util.List;
 @Getter
 public abstract class Item {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "item_id")
     private Long id;
 
@@ -28,19 +29,22 @@ public abstract class Item {
     private List<Category> categories = new ArrayList<>();
 
     //==비즈니스 로직==//
+
     /**
      * 재고 수량 증가
      */
     public void addStock(int quantity) {
         this.stockQuantity += quantity;
     }
+
     /**
      * 재고 수량 감소
      */
     public void removeStock(int quantity) {
         int restStock = this.stockQuantity - quantity;
-        if (restStock<0) {
+        if (restStock < 0) {
             throw new NotEnoughStockException("need more stock");
         }
         this.stockQuantity = restStock;
+    }
 }
