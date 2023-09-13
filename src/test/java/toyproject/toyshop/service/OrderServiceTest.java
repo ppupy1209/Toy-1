@@ -59,7 +59,7 @@ public class OrderServiceTest {
         Book book = createBook("시골 JPA", 10000, 10);
 
         int orderCount = 2;
-        
+
         Long orderId = orderService.order(member.getId(), book.getId(), orderCount);
         Order order = orderRepository.findOne(orderId);
         // when
