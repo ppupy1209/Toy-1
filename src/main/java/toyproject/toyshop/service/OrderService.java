@@ -11,6 +11,7 @@ import toyproject.toyshop.domain.item.Item;
 import toyproject.toyshop.repository.ItemRepository;
 import toyproject.toyshop.repository.MemberRepository;
 import toyproject.toyshop.repository.OrderRepository;
+import toyproject.toyshop.repository.OrderSearch;
 
 import java.util.List;
 
@@ -62,8 +63,8 @@ public class OrderService {
     /**
      * 검색
      */
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 
 }
